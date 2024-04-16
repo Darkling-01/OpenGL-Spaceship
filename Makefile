@@ -5,17 +5,18 @@ CFLAGS = -Wall -std=c++11
 # Directories
 SRCDIR = src
 INCDIR = include
-BINDIR = bin
+BINDIR = ../bin
 
 #source file
 SRCS = $(wildcard $(SRCDIR)/*.cpp)
-OBJS = $(patsubst $(SRCDIR)/%.cpp,$(BINDIR)/%.o,$(SRCS))
+# OBJS = $(patsubst $(SRCDIR)/%.cpp,$(BINDIR)/%.o,$(SRCS))
+OBJS = $(SRCS:$(SRCDIR)/%.cpp=$(BINDIR)/%.o)
 
 # Main target
 TARGET = main
 
 # Libraries
-LIBS = -lGL -lglut
+LIBS = -lGL -lGLU -lglut
 
 # Rules
 all: $(BINDIR)/$(TARGET)
@@ -30,8 +31,4 @@ $(BINDIR)/%.o: $(SRCDIR)/%.cpp
 
 clean:
 	rm -rf $(BINDIR)
-
-
-
- 
 

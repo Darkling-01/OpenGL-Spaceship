@@ -3,9 +3,15 @@
 
 class Player{
 
-public:
-   Player();
-   void drawHouse() const;  //declare function to draw house
+private:
+  
+   float damage = 13;
+   float speed = 10;
+   float x, y;   // position
+
+public:  
+
+   void drawPlayer() const;  //declare function to draw house
    //other member function and variables...
 
 };
