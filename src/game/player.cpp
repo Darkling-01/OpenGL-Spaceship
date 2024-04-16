@@ -1,16 +1,17 @@
 #include <GL/glut.h>
-#include "player.h"
+#include "../include/game/player.h"
 
 
-void Player::drawHouse() const{
-   
-   glBegin(GL_LINE_STRIP);
-    glVertex2i(40, 40);
-    glVertex2i(40, 90);
-    glVertex2i(70, 120);
-    glVertex2i(100, 90);
-    glVertex2i(100, 40);
+void Player::drawPlayer() const{
+   glColor3f(0.678f, 0.847f, 0.902f);	    // set drawing color
+   glBegin(GL_LINE_LOOP);         // connects frist to last vertex
+     glVertex2i(334, 300);
+     glVertex2i(330, 300);
+     glVertex2i(336, 310);
+     glVertex2i(342, 300);
+     glVertex2i(339, 300);
+     glVertex2i(336, 295);
    glEnd();
-
+   glFlush();   // send all output to display
 }
 
