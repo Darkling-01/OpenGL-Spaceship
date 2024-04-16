@@ -12,6 +12,8 @@ void Player::drawPlayer() const{
      glVertex2i(339, 300);
      glVertex2i(336, 295);
    glEnd();
-   glFlush();   // send all output to display
+
+   glutPostRedisplay();     // request a redisplay to refresh the screen
+   
 }
 
