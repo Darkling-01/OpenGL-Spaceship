@@ -3,7 +3,12 @@
 
 
 void Player::drawPlayer() const{
-   glColor3f(0.678f, 0.847f, 0.902f);	    // set drawing color
+   
+   float centerX = (334+330+336+342+339+336) / 6.0f;
+   float centerY = (300+300+310+300+300+295) / 6.0f;
+
+   glTranslatef(-centerX, -centerY, 0.0f);
+
    glBegin(GL_LINE_LOOP);         // connects frist to last vertex
      glVertex2i(334, 300);
      glVertex2i(330, 300);

@@ -5,12 +5,11 @@ class Player{
 
 private:
   
-   float damage = 13;
-   float speed = 10;
-   float x, y;   // position
+   float damage = 19;
+   float health = 100;
 
 public:  
-
+   int speed = 5;
    void drawPlayer() const;  //declare function to draw house
    //other member function and variables...
 
