@@ -4,6 +4,7 @@
 
 #include "../include/game/player.h"
 
+
 const int screenWidth = 800;
 const int screenHeight = 600;
 
@@ -60,7 +61,7 @@ void specialKey(int key, int x, int y){
        break;
      case GLUT_KEY_RIGHT:
        xr+=player.speed;
-       playerAngle = -90.0f;
+       playerAngle = 270.0f;
        break;
      case GLUT_KEY_LEFT:
        xr-=player.speed;
