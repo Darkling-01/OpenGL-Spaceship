@@ -1,15 +1,16 @@
-# compiler and flags
+# Compiler and flags
 CC = g++
 CFLAGS = -Wall -std=c++11
 
 # Directories
 SRCDIR = src
 INCDIR = include
-BINDIR = ../bin
+BINDIR = bin
+GAMEDIR = $(BINDIR)/game  # Define the game directory
 
-#source file
+# Source files
 SRCS = $(wildcard $(SRCDIR)/*.cpp)
-# OBJS = $(patsubst $(SRCDIR)/%.cpp,$(BINDIR)/%.o,$(SRCS))
+SRCS += $(wildcard $(SRCDIR)/game/*.cpp)  # Add game-specific source files
 OBJS = $(SRCS:$(SRCDIR)/%.cpp=$(BINDIR)/%.o)
 
 # Main target
@@ -24,9 +25,9 @@ all: $(BINDIR)/$(TARGET)
 $(BINDIR)/$(TARGET): $(OBJS)
 	$(CC) $(CFLAGS) -o $@ $^ $(LIBS)
 
-
+# Create the directories before compiling
 $(BINDIR)/%.o: $(SRCDIR)/%.cpp
-	@mkdir -p $(BINDIR)
+	@mkdir -p $(dir $@)  # Create the directory if it doesn't exist
 	$(CC) $(CFLAGS) -c -o $@ $< -I$(INCDIR)
 
 clean:
