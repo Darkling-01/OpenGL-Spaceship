@@ -4,7 +4,7 @@
 #include <GL/glut.h>
 
 
-class PlayerShader(){
+class PlayerShader{
 
    public:
 

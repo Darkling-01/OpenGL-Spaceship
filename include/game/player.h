@@ -9,7 +9,7 @@ class Player{
      float health = 100;
 
    public:  
-     int speed = 5;
+     int speed = 7;
      void drawPlayer() const;  //declare function to draw house
      //other member function and variables...
 
