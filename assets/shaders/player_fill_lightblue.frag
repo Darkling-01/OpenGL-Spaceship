@@ -1,9 +1,14 @@
 #version 300 core
 
-out vec4 color;
+// global veriables
+
+out vec4 FragColor;
+
+in vec4 vertexColor;  // the input variable from the vertex shader (same name and same type)
+
 
 void main(){
-   color = vec4(0.678f, 0.847f, 0.902f, 1.0f);
+   FragColor = vertexColor;
 
 }
 
